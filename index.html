@@ -35,14 +35,39 @@
   <link href="css/styles.css" rel="stylesheet" />
 
   <style>
+    /* Paleta natural/saúde */
+    :root{
+      --brand-deep:#1b5e20;   /* verde escuro */
+      --brand:#2e7d32;        /* verde principal */
+      --brand-light:#66bb6a;  /* verde claro */
+      --brand-verylight:#e8f5e9; /* fundo suave */
+      --brand-accent:#a5d6a7; /* acento */
+    }
+
     body { font-family: 'Lato', sans-serif; }
-    .masthead { position: relative; background: url('assets/img/hero.jpg') center/cover no-repeat; padding: 7rem 0; }
+
+    /* Sobrescreve "primary" do tema para verde */
+    .btn-primary{ background-color:var(--brand); border-color:var(--brand); }
+    .btn-primary:hover, .btn-primary:focus{ background-color:var(--brand-deep); border-color:var(--brand-deep); }
+    .text-primary{ color:var(--brand)!important; }
+    .bg-primary{ background-color:var(--brand)!important; }
+    a{ color:var(--brand); }
+    a:hover{ color:var(--brand-deep); }
+
+    .masthead { position: relative; background: url('assets/img/hero-nature.jpg') center/cover no-repeat; padding: 7rem 0; }
     .masthead::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.45); }
     .masthead .content { position: relative; z-index: 1; }
+
+    .features-icons{ background:var(--brand-verylight); }
     .features-icons .features-icons-icon { height: 7rem; }
-    .showcase .showcase-img { min-height: 30rem; background-size: cover; }
-    .call-to-action { background: #0d6efd; padding: 4rem 0; }
-    .timer-bar { background:#dc3545; color:#fff; text-align:center; font-weight:600; padding:0.5rem; font-size:1.1rem; }
+
+    .showcase .showcase-img { min-height: 30rem; background-size: cover; background-position:center; }
+
+    .call-to-action { background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%); padding: 4rem 0; }
+
+    .timer-bar { background:var(--brand-deep); color:#fff; text-align:center; font-weight:600; padding:0.5rem; font-size:1.05rem; }
+
+    .badge-accent{ background:var(--brand-light); color:#0b2c0e; }
   </style>
 </head>
 <body>
@@ -105,7 +130,62 @@
     </div>
   </section>
 
-  <!-- Showcases e Depoimentos permanecem os mesmos -->
+  <!-- Showcases com imagens do nicho -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('assets/img/showcase-salad.jpg')" role="img" aria-label="Tigela de salada fresca e colorida"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text p-5">
+          <h2>Alimentação natural e saborosa</h2>
+          <p class="lead mb-0">Receitas simples com ingredientes de verdade — nada de radicalismos, apenas escolhas mais inteligentes.</p>
+        </div>
+      </div>
+      <div class="row g-0">
+        <div class="col-lg-6 text-white showcase-img" style="background-image:url('assets/img/showcase-smoothie.jpg')" role="img" aria-label="Smoothie verde nutritivo"></div>
+        <div class="col-lg-6 my-auto showcase-text p-5">
+          <h2>Metabolismo em movimento</h2>
+          <p class="lead mb-0">Dicas práticas para acelerar a queima de gordura naturalmente, com hábitos que cabem na rotina.</p>
+        </div>
+      </div>
+      <div class="row g-0">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image:url('assets/img/showcase-nature-walk.jpg')" role="img" aria-label="Caminhada em parque arborizado"></div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text p-5">
+          <h2>Leveza que dura</h2>
+          <p class="lead mb-0">Passos consistentes para criar uma rotina sustentável e prazerosa, conectada à natureza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials text-center bg-light py-5" style="background:var(--brand-verylight)">
+    <div class="container">
+      <h2 class="mb-5">Elas já começaram e aprovaram</h2>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-m1.jpg" alt="Aluna sorrindo após resultados" loading="lazy" />
+            <h5>Mariana P.</h5>
+            <p class="fw-light mb-0">“Perdi 3,2 kg em 21 dias sem passar fome. O plano é realista.”</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-m2.jpg" alt="Aluna com smoothie verde" loading="lazy" />
+            <h5>Fernanda S.</h5>
+            <p class="fw-light mb-0">“As combinações de alimentos fizeram toda a diferença pra mim.”</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-0 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-m3.jpg" alt="Aluna caminhando ao ar livre" loading="lazy" />
+            <h5>Sarah W.</h5>
+            <p class="fw-light mb-0">“Simples de seguir. Recomendo!”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Call to Action / Formulário -->
   <section class="call-to-action text-white text-center" id="signup">
